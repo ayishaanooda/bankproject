@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    button {
+  background-color: #FF5733 ;
+  color: white;
+  padding: 14px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+
+   border-radius: 15px;
+
+}
+</style>
+
+<form action="info" method="post">
+ {% csrf_token %}
+<h3 style="padding-top:100px;
+   padding-bottom:50px;">Click here to enter the data
+
+<a href="personel" class="btn btn-primary rounded-pill py-2 px-4">Click</a></h3>
+
+</form>
+{% endblock %}

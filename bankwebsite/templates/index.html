@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!--{% load static %}-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <title>my banking website</title>-->
+<!--    <meta content="width=device-width, initial-scale=1.0" name="viewport">-->
+<!--    <meta content="" name="keywords">-->
+<!--    <meta content="" name="description">-->
+
+<!--    &lt;!&ndash; Favicon &ndash;&gt;-->
+<!--    <link href="img/favicon.ico" rel="icon">-->
+
+<!--    &lt;!&ndash; Google Web Fonts &ndash;&gt;-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" >-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Icon Font Stylesheet &ndash;&gt;-->
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Libraries Stylesheet &ndash;&gt;-->
+<!--    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />-->
+
+<!--    &lt;!&ndash; Customized Bootstrap Stylesheet &ndash;&gt;-->
+<!--    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Template Stylesheet &ndash;&gt;-->
+<!--    <link href="{% static 'css/style.css' %}" rel="stylesheet">-->
+<!--</head>-->
+
+<!--<body>-->
+
+
+
+    <!-- Topbar Start -->
+<!--    <div class="container-fluid bg-dark px-5 d-none d-lg-block">-->
+<!--        <div class="row gx-0">-->
+<!--            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">-->
+<!--                <div class="d-inline-flex align-items-center" style="height: 45px;">-->
+<!--                    <small class="me-3 text-light">Help Line Number:</small>-->
+<!--                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>-->
+<!--                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>globalbank@example.com</small>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+<!--        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">-->
+<!--            <a href="" class="navbar-brand p-0">-->
+<!--                <h1 class="text-primary m-0"><i class="fa fa-globe text-primary "></i>GLOBAL BANK</h1>-->
+<!--                &lt;!&ndash; <img src="img/logo.png" alt="Logo"> &ndash;&gt;-->
+<!--            </a>-->
+<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">-->
+<!--                <span class="fa fa-bars"></span>-->
+<!--            </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--                <div class="navbar-nav ms-auto py-0">-->
+<!--                    <a href="index.html" class="nav-item nav-link active">Home</a>-->
+<!--                    <a href="login" class="nav-item nav-link">Login</a>-->
+<!--                    <a href="register" class="nav-item nav-link">Register</a>-->
+<!--                    <div class="nav-item dropdown">-->
+<!--                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Branches</a>-->
+<!--                        <div class="dropdown-menu m-0">-->
+<!--                            <a href="https://www.google.com/search?q=kozhikkode&rlz=1C1CHBF_enIN1031IN1031&oq=kozhikkode&aqs=chrome..69i57j46i10i340i433i512l2j0i10i433i512j0i10i512j46i10i175i199i512j0i10i512j0i10i433i512j46i10i175i199i512.4138j0j15&sourceid=chrome&ie=UTF-8" class="dropdown-item">Kozhikkode</a>-->
+<!--                            <a href="https://www.google.com/search?q=malappuram+&rlz=1C1CHBF_enIN1031IN1031&ei=DFpbZPiJAoGL9u8P8r2WiAQ&ved=0ahUKEwj4v4jWrur-AhWBhf0HHfKeBUEQ4dUDCA8&uact=5&oq=malappuram+&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCAAQigUQQzINCC4QigUQxwEQrwEQQzIHCAAQigUQQzIOCC4QigUQsQMQgwEQkQIyCAgAEIoFEJECMgcIABCKBRBDMgQIABADMgcIABCKBRBDMgQIABADMgUIABCABDoHCAAQDRCABDoGCAAQHhANOggIABAIEB4QDToICAAQigUQhgM6BggAEBYQHjoICAAQFhAeEA86GQgAEIoFEOoCELQCEIoDELcDENQDEOUCGAE6DQgAEI8BEOoCELQCGAI6DQguEI8BEOoCELQCGAI6DggAEIoFELEDEIMBEJECOgoILhCKBRDUAhBDOhEILhCKBRCxAxCDARDHARDRAzoLCC4QgwEQsQMQgAQ6CwguEIAEELEDEIMBOgsIABCABBCxAxCDAToLCAAQigUQsQMQgwE6EwguEIoFELEDEIMBEMcBENEDEEM6DQgAEIoFELEDEIMBEEM6EAguEIoFELEDEIMBENQCEEM6IQguEIoFELEDEIMBEMcBENEDEEMQlwUQ3AQQ3gQQ4AQYAzoOCC4QigUQxwEQ0QMQkQI6DQguEIoFEMcBENEDEEM6CgguEIoFELEDEEM6HAguEIoFEMcBENEDEJECEJcFENwEEN4EEOAEGAM6DQguEIoFELEDEIMBEEM6EAguEIMBENQCELEDEIoFEENKBAhBGABKBQhAEgExUABY1EVgoUpoAXABeAWAAb0CiAGDH5IBCDEuNS4xMi4xmAEAoAEBsAEUwAEB2gEECAEYB9oBBggCEAEYCtoBBggDEAEYFA&sclient=gws-wiz-serp" class="dropdown-item">Malappuram</a>-->
+<!--                            <a href="https://www.google.com/search?q=kannur&rlz=1C1CHBF_enIN1031IN1031&ei=IVpbZO-NFLaL9u8P1p-GiA0&ved=0ahUKEwivopzgrur-AhW2hf0HHdaPAdEQ4dUDCA8&uact=5&oq=kannur&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCC4QigUQsQMQQzIHCAAQigUQQzINCC4QigUQsQMQgwEQQzIRCC4QgAQQsQMQgwEQxwEQrwEyBQgAEIAEMgsIABCABBCxAxCDATIFCAAQgAQyBQgAEIAEMgUIABCABDILCC4QgAQQxwEQrwEyGAguEIoFELEDEEMQlwUQ3AQQ3gQQ4AQYAToKCC4QigUQ1AIQQzoHCC4QigUQQzoYCC4QigUQ1AIQQxCXBRDcBBDeBBDgBBgBOhUILhCKBRBDEJcFENwEEN4EEOAEGAE6CAguEIAEELEDOggIABCABBCxA0oECEEYAFAAWKwKYPEOaABwAXgAgAGHAogBvgqSAQUwLjEuNZgBAKABAcABAdoBBggBEAEYFA&sclient=gws-wiz-serp" class="dropdown-item">Kannur</a>-->
+<!--                            <a href="https://www.google.com/search?q=ernakulam&rlz=1C1CHBF_enIN1031IN1031&ei=PlpbZNb1FY-L9u8PnqyCaA&gs_ssp=eJzj4tTP1TdIMjVNMTdg9OJMLcpLzC7NScwFAEVsBro&oq=ernalu&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMhAILhCKBRCxAxCDARDUAhBDMgcIABCKBRBDMgcIABCKBRBDMgcIABCKBRBDMgcIABCKBRBDMgcIABCABBAKMgcIABCABBAKMgcIABCABBAKMgcIABCABBAKMgcIABCABBAKMh4ILhCKBRCxAxCDARDUAhBDEJcFENwEEN4EEOAEGAE6CgguEIoFENQCEEM6EQguEIMBEMcBELEDENEDEIAEOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6CwgAEIoFELEDEIMBOhgILhCKBRDUAhBDEJcFENwEEN4EEOAEGAE6BwguEIoFEEM6DQguEIoFEMcBEK8BEEM6CwguEIAEELEDEIMBOgUIABCABDoKCC4QgAQQ1AIQCjoFCC4QgAQ6GAguEIAEENQCEAoQlwUQ3AQQ3gQQ3wQYAUoECEEYAFAAWJ4LYL8caABwAXgAgAG7A4gBhgySAQkwLjIuMy4wLjGYAQCgAQHAAQHaAQYIARABGBQ&sclient=gws-wiz-serp" class="dropdown-item">Ernakulam</a>-->
+<!--                            <a href="https://www.google.com/search?q=trissur&rlz=1C1CHBF_enIN1031IN1031&ei=VFpbZM3ZO8uJ9u8PyJqC-AU&ved=0ahUKEwjN0-z4rur-AhXLhP0HHUiNAF8Q4dUDCA8&uact=5&oq=trissur&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzINCC4QigUQsQMQ1AIQQzIHCAAQigUQQzIHCAAQigUQQzIKCAAQigUQsQMQQzIKCAAQgAQQsQMQCjIHCC4QgAQQCjIHCAAQgAQQCjINCC4Q1AIQsQMQigUQQzINCAAQgAQQsQMQgwEQCjIHCAAQgAQQCjIbCC4QigUQsQMQ1AIQQxCXBRDcBBDeBBDgBBgBOgoILhCKBRDUAhBDOgcILhCKBRBDOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6CwguEIoFELEDEIMBOhgILhCKBRDUAhBDEJcFENwEEN4EEOAEGAE6DQgAEIoFELEDEIMBEEM6DQguEIMBELEDEIoFEEM6CAguEIAEELEDOgsILhCABBCxAxCDAToFCAAQgAQ6CwguEIAEEMcBEK8BOhUILhCKBRBDEJcFENwEEN4EEOAEGAFKBAhBGABQAFjDC2DSEmgAcAF4AIABkAKIAeQLkgEFMC40LjOYAQCgAQHAAQHaAQYIARABGBQ&sclient=gws-wiz-serp" class="dropdown-item">Trissur</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <a href="login" class="btn btn-primary rounded-pill py-2 px-4">Login</a>-->
+<!--            </div>-->
+<!--        </nav>-->
+
+<!--        <div class="container-fluid bg-primary py-5 mb-5 hero-header">-->
+<!--            <div class="container py-5">-->
+<!--                <div class="row justify-content-center py-5">-->
+<!--                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">-->
+<!--                        <h1 class="display-3 text-white mb-3 animated slideInDown">Enjoy Your Vacation With Us</h1>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!-- Navbar & Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/about_2.jpg' %}" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                    <h1 class="mb-4">Welcome to <span class="text-primary">GLOBAL BANK</span></h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Loans</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Credit Card</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Debit Card</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Cheque Book</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Fixed Deposit</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
+                <h1 class="mb-5">Our Services</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5>Credit / Debit Cards</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5>Advancements of loans</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5>Cheque payments</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                               <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5>Consultancy</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+<!--    <div class="container-fluid bg-dark text-light footer" >-->
+
+
+<!--            <div class="copyright">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-12 text-center">-->
+<!--                        &copy; <a  href="#">Global Bank</a>, All Right Reserved.-->
+
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+
+<!--    </div>-->
+    <!-- Footer End -->
+
+
+
+
+
+<!--    &lt;!&ndash; JavaScript Libraries &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>-->
+<!--    <script src="{% static 'lib/wow/wow.min.js' %}"></script>-->
+<!--    <script src="{% static 'lib/easing/easing.min.js' %}"></script>-->
+<!--    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>-->
+<!--    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>-->
+<!--    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>-->
+<!--    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>-->
+<!--    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>-->
+
+<!--    &lt;!&ndash; Template Javascript &ndash;&gt;-->
+<!--    <script src="{% static 'js/main.js' %}"></script>-->
+<!--</body>-->
+        <!--</html>-->
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #FF5733 ;
+  color: white;
+  padding: 14px 20px;
+    margin : 0 ;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+   border-radius: 15px;
+
+
+
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+
+.login {
+  padding: 14px 20px;
+
+  background-color: #196F3D;
+}
+
+
+.login, .reg {
+  float: left;
+  width: 50%;
+    </style>
+
+
+<form action="login" method="post" style="padding-top:50px;padding-left:280px;">
+   {% csrf_token %}
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username"><br>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password"><br>
+
+<div class="col-md-6" style="text-align:center;padding-left:100px;padding-top:25px;">
+          <button type="submit"  >Login</button></div>
+<!--      <h2>  <a href="register" style="text-align: center" >Register</a></div></h2>-->
+<!--<a href="register" class="btn btn-primary rounded-pill py-2 px-4">Register</a>-->
+
+    <p style="text-align: center;padding-top:50px;padding-right:300px;">Don't have an account? <a href="register">Register</a>.</p>
+
+
+  </div>
+
+
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+{% endblock %}

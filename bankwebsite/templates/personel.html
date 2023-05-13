@@ -1,0 +1,361 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password],input[type=date] ,textarea{
+  width: 75%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #FF5733 ;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+   border-radius: 15px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+
+.login {
+  padding: 14px 20px;
+
+  background-color: #196F3D;
+}
+select{
+
+    height: 30px;
+    width:75%;
+    padding: 0 15px;
+    text-align: center;
+}
+form{
+
+    padding-left:290px;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 10px 15px;
+  background-color: #5cb85c;
+  color: white;
+
+}
+
+.modal-body {
+    padding: 10px 15px;
+    text-align: center;
+    }
+
+
+    </style>
+<script>
+var subObject = {
+
+    "Kasaragod": ["Bekal", "Cheruvathur", "Kanhangad", "Kumbla","Nileshwar","Trikaripur","Uppala"],
+    "Kannur": ["Kannur","Kannur Cantonment","Thalassery","Taliparamba","Kuthuparamba","Mattannur"],
+    "Wayanad": ["Kalpetta","Mananthavady","Sulthan Bathery"],
+    "Kozhikode": ["Kozhikode","namely","Balusseri","Chelannur","Koduvally","Kozhikode","Kunnamangalam","Kunnummal","Melady","Panthalayani","Perambra","Thodannur","Thuneri","Vadakara"],
+    "Malappuram": ["Ponnani","Edappal","Tirur","Tanur","Tirurangadi","Parappanangadi"],
+    "Trissur": ["Kunnamkulam","Cherpu","Chalakudy","Chavakkad","Chelakkara","Guruvayoor","Irinjalakuda","Kodungallur"],
+    "Palakkad": ["Akathethara","Ayyapuram","Chandranagar","Chittur","Jainamedu","Kaikatty","Kakkayur","Kallekkad","Kallekulangara","Kalpathy","Kanjikode"],
+    "Ernakulam": ["Aluva","Angamaly","Kochi","Kothamangalam","Muvattupuzha","North Paravur"],
+    "Kottayam": ["Changanassery","Erattupetta","Ettumanoor","Kanjirappally","Kottayam","Manarcaud","Pala","Kerala","Pampady","Parathanam","Ponkunnam"],
+    "Alappuzha": ["Alappuzha","Chengannur","Cherthala","Haripad","Kayamkulam","Mavelikara"],
+    "Idukki": ["Adimali","Cheruthoni","Idukki township","Kattappana","Kumily","Marayur","Munnar","Murickassery","Muthalakodam","Thodupuzha"],
+    "Pathanamthitta": ["Adavi","Adoor","Konni","Kadapra","Konni","Kozhencherry","Mallapally","Pandalam","Parumala","Pathanamthitta"],
+    "Kollam": ["Adinad","Ampalamkunnu","Ayoor","Chathannoor","Kadakkal","Karunagappalli","Kollam","Kottarakkara","Kottiyam","Kulathupuzha","Kundara","Mukhathala"],
+    "Thiruvanathapuram": ["Chirayinkeezhu","Neyyattinkara","Nedumangadu","Varkala","Kattakada"]
+
+
+
+
+  }
+
+
+window.onload = function() {
+
+  var distSel = document.getElementById("district");
+  var citySel = document.getElementById("city");
+
+  for (var x in subObject) {
+    distSel.options[distSel.options.length] = new Option(x, x);
+  }
+  distSel.onchange = function() {
+
+    citySel.length = 1;
+
+
+    var z = subObject[distSel.value];
+    for (var i = 0; i < z.length; i++) {
+      citySel.options[citySel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+
+<!--model div open-->
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+    <div class="modal-header">
+
+        <h2>Application Accepted</h2>
+         <span class="close">&times;</span>
+    </div>
+    <div class="modal-body">
+      <p>Go Back To Home Page  <a href="home">Home</a></p>
+    </div>
+    </div>
+</div>
+<!--model div close-->
+<form>
+     {% csrf_token %}
+
+    <h2 style="padding-left:50px">Application Form</h2>
+    <table>
+        <tr>
+            <td>
+                <label for="uname">Name</label>
+            </td>
+            <td>
+                <input type="text" id="uname" name="username">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="date">Date Of Birth</label>
+            </td>
+            <td>
+            <input type="date" id="date" name="date">            </td>
+        </tr>
+
+
+          <tr>
+            <td>
+                <label for="age">Age</label>
+            </td>
+            <td>
+                <input type="text" name="userage" id="age" size="2" maxlength="2">
+            </td>
+        </tr>
+          <tr>
+            <td>
+                <label>Gender</label>
+            </td>
+            <td>
+                <label>
+                    <input type="radio" value="f" name="gender"> Female</label>
+                    <label>
+                    <input value="m" type="radio" name="gender"> Male</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    <label for="phone">Phone Number</label>
+            </td>
+            <td>
+                    <input type="text" id="phone">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="uemail">Email</label>
+            </td>
+            <td>
+                <input type="text" id="uemail" name="usermail">
+
+            </td>
+        </tr>
+      <tr>
+            <td>
+                <label>Address</label>
+            </td>
+            <td>
+                <textarea rows="4" cols="40"></textarea>
+            </td>
+        </tr>
+<!--        <tr>-->
+<!--            <td>-->
+<!--                <label for="state">State</label>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <select name="subject" id="state">-->
+<!--                    <option value="" selected="selected">-&#45;&#45;Select state-&#45;&#45;</option>-->
+<!--                </select>-->
+<!--             </td>-->
+<!--         </tr>-->
+
+         <tr>
+            <td>
+                 <label for="district">District</label>
+             </td>
+             <td>
+                <select name="topic" id="district">
+                    <option value="" selected="selected">---Select District---</option>
+                </select>
+             </td>
+         </tr>
+
+         <tr>
+             <td>
+                <label for="city">City</label>
+            </td>
+            <td>
+                <select name="chapter" id="city">
+                     <option value="" selected="selected">---Select District First---</option>
+                </select>
+            </td>
+         </tr>
+
+         <tr>
+            <td>
+                    <label for="type">Accound Type</label>
+            </td>
+            <td>
+                    <select id="type" name="type">
+                        <option disabled selected>--Choose Account Type--</option>
+
+                                <option>Savings Account</option>
+                                <option>Current Account</option>
+
+
+
+                    </select>
+            </td>
+        </tr>
+           <tr>
+            <td>
+                <label>Materials Provide</label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" > Cheque Book
+                </label>
+                <label>
+                    <input type="checkbox"> Debit Card
+                </label>
+                <label>
+                    <input type="checkbox"> Credit Card
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+
+
+                 <div class="clearfix">
+
+        <button type="button" id="myBtn"  class="cancelbtn">SUBMIT</button>
+        <a href="logout" type="submit" class=" btn btn-primary " style=" border-radius: 15px;padding: 10px 20px;">Logout</a>
+
+      </div>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+{% endblock %}
